@@ -1,0 +1,32 @@
+# Node dependencies
+node_modules/
+
+# Environment variables
+.env
+backend/.env
+frontend/.env
+
+# Build folders
+build/
+dist/
+android/app/build/
+ios/build/
+
+# Uploads
+uploads/
+
+# Logs
+logs/
+*.log
+
+# Cache
+.cache/
+.expo/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
