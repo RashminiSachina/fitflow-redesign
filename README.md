@@ -191,6 +191,60 @@ Configuration and setup instructions will be added as the AI service implementat
 
 ---
 
+## Run the app
+
+The HCI lab MVP uses an in-memory Express API and a React Native CLI Android app. No Firebase or MongoDB credentials are required.
+
+### Backend
+
+```bash
+cd backend
+cp .env.example .env   # Windows: copy .env.example .env
+npm install
+npm start
+```
+
+The API listens on `http://localhost:5000`. Check `GET /api/health`.
+
+Demo auth: any valid email and a password of at least 6 characters. `POST /api/auth/login` creates the account if it does not exist.
+
+### Android (emulator)
+
+1. Start the backend (above).
+2. In another terminal:
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+3. In a third terminal:
+
+```bash
+cd frontend
+npm run android
+```
+
+The emulator reaches the API at `http://10.0.2.2:5000` (`frontend/src/config.js`). On a physical device, change that URL to your computer’s LAN IP.
+
+The app still works if the API is down: it falls back to data saved on the device and shows an **Offline mode** banner.
+
+---
+
+## Release build
+
+Signed Android release steps, keystore generation, output paths, and verification commands are in:
+
+* `release/build-notes.md`
+* `release/keystore-management.md`
+
+Store screenshots and listing assets go in `release/store-assets/`. Internal test notes go in `testing/`.
+
+Never commit `*.jks`, `keystore.properties`, or `.env` files.
+
+---
+
 ## Environment Variables
 
 Environment-specific configuration should be stored in `.env` files and should **not be committed to the repository**.

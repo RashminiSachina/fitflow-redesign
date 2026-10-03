@@ -1,0 +1,40 @@
+# OSX
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Env and secrets
+.env
+.env.local
+*.jks
+*.keystore
+!**/debug.keystore
+keystore.properties
+
+# Android / iOS build
+**/build/
+**/.gradle/
+**/local.properties
+**/.cxx/
+**/.kotlin/
+*.hprof
+*.iml
+.idea/
+DerivedData/
+*.xcuserstate
+**/.xcode.env.local
+**/Pods/
+/vendor/bundle/
+
+# React Native
+*.jsbundle
+.metro-health-check*
+coverage/
+
+# Release signing artifacts
+*.apk
+*.aab
+!debug.keystore
